@@ -16,17 +16,17 @@
 	#rcorners1 {
     border-radius: 25px;
     background: #73AD21;
-    padding: 20px; 
+    padding: 20px;
     width: 200px;
-    height: 140px;    
+    height: 140px;
 }
 
 	#rcorners2 {
     border-radius: 25px;
     background: #B22222;
-    padding: 20px; 
+    padding: 20px;
     width: 200px;
-    height: 100px;    
+    height: 100px;
 }
 </style>
 
@@ -115,28 +115,28 @@
 												<div class="col-12">
 													<label for="CODE_GENDER">Gender</label>
 													<div class="col-4 col-12-small">
-														<input type="checkbox" id="CODE_GENDER" name="CODE_GENDER" value="M">
-														<label for="demo-priority-low">Male</label>
-														<input type="checkbox" id="CODE_GENDER" name="CODE_GENDER" value="F">
-														<label for="demo-priority-normal">Female</label>
+														<input type="radio" id="CODE_GENDER" name="GENDER" value="M">
+														<label for="CODE_GENDER">Male</label>
+														<input type="radio" id="CODE_GENDER" name="GENDER" value="F">
+														<label for="CODE_GENDER">Female</label>
 													</div>
 												</div>
 												<div class="col-12">
 													<label for="demo-gender">Owns Car</label>
 													<div class="col-4 col-12-small">
-														<input type="radio" id="FLAG_OWN_CAR" name="FLAG_OWN_CAR" value="Y">
-														<label for="demo-car">Yes</label>
-														<input type="radio" id="FLAG_OWN_CAR" name="FLAG_OWN_CAR" value="N">
-														<label for="demo-priority-normal">No</label>
+														<input type="radio" id="FLAG_OWN_CAR" name="CAR" value="Y">
+														<label for="FLAG_OWN_CAR">Yes</label>
+														<input type="radio" id="FLAG_OWN_CAR" name="CAR" value="N">
+														<label for="FLAG_OWN_CAR">No</label>
 													</div>
 												</div>
 												<div class="col-12">
 													<label for="demo-gender">Owns Real Estate</label>
 													<div class="col-4 col-12-small">
-														<input type="radio" id="FLAG_OWN_REALTY" name="demo-priority" value="Y">
-														<label for="demo-car">Yes</label>
-														<input type="radio" id="FLAG_OWN_REALTY" name="demo-priority" value="N">
-														<label for="demo-priority-normal">No</label>
+														<input type="radio" id="FLAG_OWN_REALTY" name="REALTY" value="Y">
+														<label for="FLAG_OWN_REALTY">Yes</label>
+														<input type="radio" id="FLAG_OWN_REALTY" name="REALTY" value="N">
+														<label for="FLAG_OWN_REALTY">No</label>
 													</div>
 												</div>
 												<div class="col-12">
@@ -150,21 +150,21 @@
 												<div class="col-12">
 													<label for="demo-gender">Suite Type</label>
 													<div class="col-4 col-12-small">
-														<input type="radio" id="NAME_TYPE_SUITE" name="demo-priority" value="Family">
-														<label for="demo-car">Family</label>
-														<input type="radio" id="NAME_TYPE_SUITE" name="demo-priority" value="Unaccompanied">
-														<label for="demo-priority-normal">Unaccompanied</label>
+														<input type="radio" id="NAME_TYPE_SUITE" name="SUITE" value="Family">
+														<label for="NAME_TYPE_SUITE">Family</label>
+														<input type="radio" id="NAME_TYPE_SUITE" name="SUITE" value="Unaccompanied">
+														<label for="NAME_TYPE_SUITE">Unaccompanied</label>
 													</div>
 												</div>
 												<div class="col-12">
 													<label for="demo-gender">Education Type</label>
 													<div class="col-4 col-12-small">
-														<input type="radio" id="NAME_EDUCATION_TYPE" name="demo-priority" value="Higher">
-														<label for="demo-car">Higher</label>
-														<input type="radio" id="NAME_EDUCATION_TYPE" name="demo-priority" value="Secondary">
-														<label for="demo-priority-normal">Secondary</label>
-														<input type="radio" id="NAME_EDUCATION_TYPE" name="demo-priority" value="Lower">
-														<label for="demo-priority-normal">Lower</label>
+														<input type="radio" id="NAME_EDUCATION_TYPE" name="EDUCATION_TYPE" value="Higher">
+														<label for="NAME_EDUCATION_TYPE">Higher</label>
+														<input type="radio" id="NAME_EDUCATION_TYPE" name="EDUCATION_TYPE" value="Secondary">
+														<label for="NAME_EDUCATION_TYPE">Secondary</label>
+														<input type="radio" id="NAME_EDUCATION_TYPE" name="EDUCATION_TYPE" value="Lower">
+														<label for="NAME_EDUCATION_TYPE">Lower</label>
 													</div>
 												</div>
 												<div class="col-12">
@@ -230,44 +230,6 @@
 
 				<!-- Footer -->
 					<section id="footer">
-						<div class="inner">
-							<h2 class="major">Get in touch</h2>
-							<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="email" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-							<ul class="contact">
-								<li class="fa-home">
-									Untitled Inc<br />
-									1234 Somewhere Road Suite #2894<br />
-									Nashville, TN 00000-0000
-								</li>
-								<li class="fa-phone">(000) 000-0000</li>
-								<li class="fa-envelope"><a href="#">information@untitled.tld</a></li>
-								<li class="fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
-								<li class="fa-facebook"><a href="#">facebook.com/untitled-tld</a></li>
-								<li class="fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
 					</section>
 
 			</div>
@@ -313,7 +275,7 @@
 			   console.log('This is an unknown network.')
 		   }
 		   })
-		   
+
 		   // var thisContract =  "<%= currentContract %>";
 		   var thisContract =  "0xe6Aad1aE520754A94c966ef48DC8D57750Aee318";
 		   var abiArray = [
@@ -624,39 +586,39 @@
 				   "type": "function"
 			   }
 		   ];
-		   
+
 		   console.log(thisContract);
 		   console.log(abiArray);
-		   
+
 		   web3.eth.defaultAccount=web3.eth.accounts[0];
 		   var testContract = web3.eth.contract(abiArray);
 		   var test = testContract.at(thisContract);
-		   
-		   
-		   
-		   
+
+
+
+
 		   $("#sendData").click(function() {
 			 test.getData(["CNT_CHILDREN=", "AMT_INCOME_TOTAL=", "AMT_CREDIT=", "AMT_ANNUITY=", "DAYS_EMPLOYED=", "DAYS_BIRTH=", "OWN_CAR_AGE="], [$("#CNT_CHILDREN").val(), $("#AMT_INCOME_TOTAL").val(), $("#AMT_CREDIT").val(), $("#AMT_ANNUITY").val(), $("#DAYS_EMPLOYED").val(), $("#DAYS_BIRTH").val().replace(/-/gi, ""), $("#OWN_CAR_AGE").val()], ["NAME_CONTRACT_TYPE=", "CODE_GENDER=", "FLAG_OWN_CAR=", "FLAG_OWN_REALTY=", "NAME_TYPE_SUITE=", "NAME_INCOME_TYPE=", "NAME_EDUCATION_TYPE=", "NAME_FAMILY_STATUS=", "NAME_HOUSING_TYPE=", "OCCUPATION_TYPE="], [$("#NAME_CONTRACT_TYPE").val(), $("#CODE_GENDER").val(), $("#FLAG_OWN_CAR").val(), $("#FLAG_OWN_REALTY").val(), $("#NAME_TYPE_SUITE").val(), $("#NAME_INCOME_TYPE").val(), $("#NAME_EDUCATION_TYPE").val(), $("#NAME_FAMILY_STATUS").val(), $("#NAME_HOUSING_TYPE").val(), $("#OCCUPATION_TYPE").val()], [], [], (error,result) => (console.log(result)));
-		   
+
 		   document.getElementById("computeFraud").click();
 		   document.getElementById("showProb").click()
-		   
+
 		   });
-		   
+
 		   $("#computeFraud").click(function() {
 			   test.computeFraud.sendTransaction({value: 1000000000000000000}, (error, result) => (console.log(result)));
 		   });
-		   
+
 		   $("#showProb").click(function() {
 			   test.fraduProb(function(err, res) {
 				   console.log(res);
 			   });
-		   
+
 		   var data = null;
-		   
+
 		   var xhr = new XMLHttpRequest();
 		   xhr.withCredentials = true;
-		   
+
 		   xhr.addEventListener("readystatechange", function () {
 			 if (this.readyState === 4) {
 			   console.log(this.responseText);
@@ -668,27 +630,27 @@
 			   }
 			 }
 		   });
-		   
+
 		   xhr.open("GET", "http://localhost:5000/predict?CNT_CHILDREN="+$("#CNT_CHILDREN").val()+"&AMT_INCOME_TOTAL="+$("#AMT_INCOME_TOTAL").val()+"&AMT_CREDIT="+$("#AMT_CREDIT").val()+"&AMT_ANNUITY="+$("#AMT_ANNUITY").val()+"&DAYS_EMPLOYED="+$("#DAYS_EMPLOYED").val()+"&DAYS_BIRTH="+$("#DAYS_BIRTH").val().replace(/-/gi, "")+"&OWN_CAR_AGE="+$("#OWN_CAR_AGE").val()+"&NAME_CONTRACT_TYPE="+$("#NAME_CONTRACT_TYPE").val()+"&CODE_GENDER="+$("#CODE_GENDER").val()+"&FLAG_OWN_CAR="+$("#FLAG_OWN_CAR").val()+"&FLAG_OWN_REALTY="+$("#FLAG_OWN_REALTY").val()+"&NAME_TYPE_SUITE="+$("#NAME_TYPE_SUITE").val()+"&NAME_INCOME_TYPE="+$("#NAME_INCOME_TYPE").val()+"&NAME_EDUCATION_TYPE="+$("#NAME_EDUCATION_TYPE").val()+"&NAME_FAMILY_STATUS="+$("#NAME_FAMILY_STATUS").val()+"&NAME_HOUSING_TYPE="+$("#NAME_HOUSING_TYPE").val()+"&OCCUPATION_TYPE="+$("#OCCUPATION_TYPE").val());
 		   xhr.setRequestHeader("cache-control", "no-cache");
 		   xhr.setRequestHeader("postman-token", "b844f975-50ed-b943-85c7-7f0ea86bc623");
-		   
+
 		   xhr.send(data);
-		   
-		   
+
+
 		   })
-		   
+
 		   /*
-		   
+
 		   $("#compute").click(function() {
 			   test.getData(["id", "age"], [1, 20], [], [], [], [], function(err, result) {
 				   console.log(result);
 				   console.log(err);
 			   });
 		   });
-		   
+
 		   */
-		   
+
 		   </script>
 
 	</body>
