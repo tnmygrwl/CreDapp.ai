@@ -9,6 +9,8 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.externals import joblib
 import random as rn
 import warnings
+
+from sh import wget
 warnings.filterwarnings('ignore')
 
 
@@ -139,7 +141,14 @@ def model(features, test_features, encoding='ohe', n_folds=5):
                   early_stopping_rounds=10, verbose=200)
 
     if True:
-        model = joblib.load('lgb.pkl')
+
+        fName = 'QmSKSPPLcLJYKaS1gz4VB1jR59VRrLGoYBtu4svxAHeQuA'
+        wget('https://ipfs.io/ipfs/' + fName)
+
+        model = joblib.load(fName)
+        print(fName)
+
+        # model = joblib.load('lgb.pkl')
         # Record the best iteration
         best_iteration = model.best_iteration_
 

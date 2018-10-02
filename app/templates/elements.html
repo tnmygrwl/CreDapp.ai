@@ -11,6 +11,25 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
 		<noscript><link rel="stylesheet" href="{{ url_for('static', filename='css/noscript.css') }}" /></noscript>
+
+<style type="text/css">
+	#rcorners1 {
+    border-radius: 25px;
+    background: #73AD21;
+    padding: 20px; 
+    width: 200px;
+    height: 140px;    
+}
+
+	#rcorners2 {
+    border-radius: 25px;
+    background: #B22222;
+    padding: 20px; 
+    width: 200px;
+    height: 100px;    
+}
+</style>
+
 	</head>
 	<body class="is-preload">
 
@@ -198,8 +217,8 @@
 														<li><button type="button" id="computeFraud" style="display: none;">Compute Fraud</button></li>
 														<li><button type="button" id="showProb" style="display: none;">Show Probability</button></li>
 														<li><input type="reset" value="Reset" /></li>
-														<li><div id="result"></div></li>
 													</ul>
+													<div id="result"></div>
 												</div>
 											</div>
 									</section>
@@ -207,6 +226,7 @@
 							</div>
 
 					</section>
+
 
 				<!-- Footer -->
 					<section id="footer">
@@ -640,7 +660,12 @@
 		   xhr.addEventListener("readystatechange", function () {
 			 if (this.readyState === 4) {
 			   console.log(this.responseText);
-			   document.getElementById("result").innerHTML = this.responseText;
+			   if(this.responseText > 60) {
+			   	document.getElementById("result").innerHTML = '<center><p id="rcorners1"><b>Score : ' + this.responseText + '<br>ACCEPTABLE RISK</b></p></center><br>';
+			   }
+			   else {
+			   	document.getElementById("result").innerHTML = '<center><p id="rcorners2"><b>Score : ' + this.responseText + '<br>NOT ACCEPTABLE RISK</b></p></center><br>';
+			   }
 			 }
 		   });
 		   
