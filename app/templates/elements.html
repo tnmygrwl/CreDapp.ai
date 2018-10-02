@@ -1,0 +1,670 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Apply - CREÐAPP.ai</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+		<noscript><link rel="stylesheet" href="{{ url_for('static', filename='css/noscript.css') }}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">CREÐAPP.ai</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="/">Home</a></li>
+								<li><a href="/about">About</a></li>
+								<li><a href="/apply">Apply</a></li>
+								<li><a href="#">Log In</a></li>
+								<li><a href="#">Sign Up</a></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+						<header>
+							<div class="inner">
+								<h2>Apply</h2>
+								<p>Fill the form below for loan registration.</p>
+							</div>
+						</header>
+
+						<!-- Content -->
+							<div class="wrapper">
+								<div class="inner">
+									<section>
+										<h3 class="major">Form</h3>
+											<div class="row gtr-uniform">
+												<div class="col-6 col-12-xsmall">
+													<label for="demo-name">Name</label>
+													<input type="text" name="demo-name" id="NAME" value="" />
+												</div>
+												<div class="col-6 col-12-xsmall">
+													<label for="demo-email">Email</label>
+													<input type="email" name="demo-email" id="EMAIL_ID" value="" />
+												</div>
+												<div class="col-12">
+													<label for="demo-category">Date of Birth</label>
+													<input type="date" name="demo-income-amount" id="DAYS_BIRTH" value=""/>
+												</div>
+												<div class="col-12">
+													<label for="demo-category">Aadhar ID</label>
+													<input type="text" name="demo-aadhar-id" id="aadhaar" value="" />
+												</div>
+												<div class="col-12">
+													<label for="demo-category">Income Type</label>
+													<select name="demo-income-type" id="NAME_INCOME_TYPE">
+														<option value="">-</option>
+														<option value="Businessman">Businessman</option>
+														<option value="Commercial Associate">Commercial Associate</option>
+														<option value="Working">Working</option>
+														<option value="Pensioner">Pensioner</option>
+													</select>
+												</div>
+												<div class="col-12">
+													<label for="demo-category">Contract Type</label>
+													<input type="text" name="demo-income-amount" id="NAME_CONTRACT_TYPE" value="" placeholder="Cash Loans"/>
+												</div>
+												<div class="col-12">
+													<label for="demo-category">Total Income</label>
+													<input type="text" name="demo-income-amount" id="AMT_INCOME_TOTAL" value="" />
+												</div>
+												<div class="col-12">
+													<label for="demo-category">Credit Amount</label>
+													<input type="text" name="demo-credit-amount" id="AMT_CREDIT" value="" />
+												</div>
+												<div class="col-12">
+													<label for="CODE_GENDER">Gender</label>
+													<div class="col-4 col-12-small">
+														<input type="checkbox" id="CODE_GENDER" name="CODE_GENDER" value="M">
+														<label for="demo-priority-low">Male</label>
+														<input type="checkbox" id="CODE_GENDER" name="CODE_GENDER" value="F">
+														<label for="demo-priority-normal">Female</label>
+													</div>
+												</div>
+												<div class="col-12">
+													<label for="demo-gender">Owns Car</label>
+													<div class="col-4 col-12-small">
+														<input type="radio" id="FLAG_OWN_CAR" name="FLAG_OWN_CAR" value="Y">
+														<label for="demo-car">Yes</label>
+														<input type="radio" id="FLAG_OWN_CAR" name="FLAG_OWN_CAR" value="N">
+														<label for="demo-priority-normal">No</label>
+													</div>
+												</div>
+												<div class="col-12">
+													<label for="demo-gender">Owns Real Estate</label>
+													<div class="col-4 col-12-small">
+														<input type="radio" id="FLAG_OWN_REALTY" name="demo-priority" value="Y">
+														<label for="demo-car">Yes</label>
+														<input type="radio" id="FLAG_OWN_REALTY" name="demo-priority" value="N">
+														<label for="demo-priority-normal">No</label>
+													</div>
+												</div>
+												<div class="col-12">
+													<label for="demo-category">Number of Children</label>
+													<input type="text" name="demo-credit-amount" id="CNT_CHILDREN" value="" />
+												</div>
+												<div class="col-12">
+													<label for="demo-category">Annuity Amount</label>
+													<input type="text" name="demo-credit-amount" id="AMT_ANNUITY" value="" />
+												</div>
+												<div class="col-12">
+													<label for="demo-gender">Suite Type</label>
+													<div class="col-4 col-12-small">
+														<input type="radio" id="NAME_TYPE_SUITE" name="demo-priority" value="Family">
+														<label for="demo-car">Family</label>
+														<input type="radio" id="NAME_TYPE_SUITE" name="demo-priority" value="Unaccompanied">
+														<label for="demo-priority-normal">Unaccompanied</label>
+													</div>
+												</div>
+												<div class="col-12">
+													<label for="demo-gender">Education Type</label>
+													<div class="col-4 col-12-small">
+														<input type="radio" id="NAME_EDUCATION_TYPE" name="demo-priority" value="Higher">
+														<label for="demo-car">Higher</label>
+														<input type="radio" id="NAME_EDUCATION_TYPE" name="demo-priority" value="Secondary">
+														<label for="demo-priority-normal">Secondary</label>
+														<input type="radio" id="NAME_EDUCATION_TYPE" name="demo-priority" value="Lower">
+														<label for="demo-priority-normal">Lower</label>
+													</div>
+												</div>
+												<div class="col-12">
+													<label for="demo-category">Family Status</label>
+													<select name="demo-income-type" id="NAME_FAMILY_STATUS">
+														<option value="">-</option>
+														<option value="Single">Single</option>
+														<option value="Married">Married</option>
+														<option value="Widow">Widow</option>
+														<option value="Civil">Civil</option>
+														<option value="Separated">Separated</option>
+													</select>
+												</div>
+												<div class="col-12">
+													<label for="demo-category">Housig Type</label>
+													<select name="demo-income-type" id="NAME_HOUSING_TYPE">
+														<option value="">-</option>
+														<option value="House/Apt">House/Apt</option>
+														<option value="with parents">with parents</option>
+														<option value="Rented">Rented</option>
+														<option value="Municipal Apartment">Municipal Apartment</option>
+													</select>
+												</div>
+												<div class="col-12">
+													<label for="demo-category">Employment Days</label>
+													<input type="text" name="DAYS_EMPLOYED" id="DAYS_EMPLOYED" value="" />
+												</div>
+												<div class="col-12">
+													<label for="demo-category">Owned Car Age</label>
+													<input type="text" name="demo-credit-amount" id="OWN_CAR_AGE" value="" />
+												</div>
+												<div class="col-12">
+													<label for="demo-category">Occupation Type</label>
+													<select name="demo-income-type" id="OCCUPATION_TYPE">
+														<option value="">-</option>
+														<option value="High Skill Tech Staff">High Skill Tech Staff</option>
+														<option value="Core Staff">Core Staff</option>
+														<option value="Laborers">Laborers</option>
+														<option value="Drivers">Drivers</option>
+														<option value="Low-skill laborers">Low-skill laborers</option>
+													</select>
+												</div>
+												<div class="col-12">
+													<label for="demo-message">Additional Remarks</label>
+													<textarea name="demo-message" id="dummy" rows="6"></textarea>
+												</div>
+												<div class="col-12">
+													<ul class="actions">
+														<li><button type="button" id="sendData">Submit</button></li>
+														<li><button type="button" id="computeFraud" style="display: none;">Compute Fraud</button></li>
+														<li><button type="button" id="showProb" style="display: none;">Show Probability</button></li>
+														<li><input type="reset" value="Reset" /></li>
+														<li><div id="result"></div></li>
+													</ul>
+												</div>
+											</div>
+									</section>
+								</div>
+							</div>
+
+					</section>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">Get in touch</h2>
+							<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="email" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="4"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+							<ul class="contact">
+								<li class="fa-home">
+									Untitled Inc<br />
+									1234 Somewhere Road Suite #2894<br />
+									Nashville, TN 00000-0000
+								</li>
+								<li class="fa-phone">(000) 000-0000</li>
+								<li class="fa-envelope"><a href="#">information@untitled.tld</a></li>
+								<li class="fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
+								<li class="fa-facebook"><a href="#">facebook.com/untitled-tld</a></li>
+								<li class="fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/jquery.scrollex.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/util.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+			<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@0.19.0/dist/web3.min.js"></script>
+
+			<script>
+				if(typeof web3 !== 'undefined')
+				{
+				  web3 = new Web3(web3.currentProvider);
+				}
+				else
+				{
+				  alert("Install MetaMask / other Web3 Injector to use this service");
+				  web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+				}
+				web3.version.getNetwork((err, netId) => {
+		   switch (netId) {
+			 case "1":
+			   console.log('This is mainnet')
+			   break
+			 case "2":
+			   console.log('This is the deprecated Morden test network.')
+			   break
+			 case "3":
+			   console.log('This is the ropsten test network.')
+			   break
+			 case "4":
+			   console.log('This is the Rinkeby test network.')
+			   break
+			 case "42":
+			   console.log('This is the Kovan test network.')
+			   break
+			 default:
+			   console.log('This is an unknown network.')
+		   }
+		   })
+		   
+		   // var thisContract =  "<%= currentContract %>";
+		   var thisContract =  "0xe6Aad1aE520754A94c966ef48DC8D57750Aee318";
+		   var abiArray = [
+			   {
+				   "constant": false,
+				   "inputs": [
+					   {
+						   "name": "myid",
+						   "type": "bytes32"
+					   },
+					   {
+						   "name": "result",
+						   "type": "string"
+					   }
+				   ],
+				   "name": "__callback",
+				   "outputs": [],
+				   "payable": false,
+				   "stateMutability": "nonpayable",
+				   "type": "function"
+			   },
+			   {
+				   "constant": false,
+				   "inputs": [
+					   {
+						   "name": "myid",
+						   "type": "bytes32"
+					   },
+					   {
+						   "name": "result",
+						   "type": "string"
+					   },
+					   {
+						   "name": "proof",
+						   "type": "bytes"
+					   }
+				   ],
+				   "name": "__callback",
+				   "outputs": [],
+				   "payable": false,
+				   "stateMutability": "nonpayable",
+				   "type": "function"
+			   },
+			   {
+				   "constant": false,
+				   "inputs": [],
+				   "name": "computeFraud",
+				   "outputs": [],
+				   "payable": true,
+				   "stateMutability": "payable",
+				   "type": "function"
+			   },
+			   {
+				   "constant": false,
+				   "inputs": [
+					   {
+						   "name": "attribute",
+						   "type": "string"
+					   },
+					   {
+						   "name": "val",
+						   "type": "bool"
+					   }
+				   ],
+				   "name": "getBoolData",
+				   "outputs": [],
+				   "payable": false,
+				   "stateMutability": "nonpayable",
+				   "type": "function"
+			   },
+			   {
+				   "constant": false,
+				   "inputs": [
+					   {
+						   "name": "intAttr",
+						   "type": "bytes32[]"
+					   },
+					   {
+						   "name": "intVal",
+						   "type": "uint256[]"
+					   },
+					   {
+						   "name": "stringAttr",
+						   "type": "bytes32[]"
+					   },
+					   {
+						   "name": "stringVal",
+						   "type": "bytes32[]"
+					   },
+					   {
+						   "name": "boolAttr",
+						   "type": "bytes32[]"
+					   },
+					   {
+						   "name": "boolVal",
+						   "type": "bool[]"
+					   }
+				   ],
+				   "name": "getData",
+				   "outputs": [
+					   {
+						   "name": "",
+						   "type": "bool"
+					   }
+				   ],
+				   "payable": false,
+				   "stateMutability": "nonpayable",
+				   "type": "function"
+			   },
+			   {
+				   "constant": false,
+				   "inputs": [
+					   {
+						   "name": "attribute",
+						   "type": "string"
+					   },
+					   {
+						   "name": "val",
+						   "type": "uint256"
+					   }
+				   ],
+				   "name": "getIntData",
+				   "outputs": [],
+				   "payable": false,
+				   "stateMutability": "nonpayable",
+				   "type": "function"
+			   },
+			   {
+				   "constant": false,
+				   "inputs": [
+					   {
+						   "name": "attribute",
+						   "type": "string"
+					   },
+					   {
+						   "name": "val",
+						   "type": "string"
+					   }
+				   ],
+				   "name": "getStringData",
+				   "outputs": [],
+				   "payable": false,
+				   "stateMutability": "nonpayable",
+				   "type": "function"
+			   },
+			   {
+				   "anonymous": false,
+				   "inputs": [
+					   {
+						   "indexed": false,
+						   "name": "description",
+						   "type": "string"
+					   }
+				   ],
+				   "name": "LogNewOraclizeQuery",
+				   "type": "event"
+			   },
+			   {
+				   "anonymous": false,
+				   "inputs": [
+					   {
+						   "indexed": false,
+						   "name": "output",
+						   "type": "string"
+					   }
+				   ],
+				   "name": "LogOutputReceived",
+				   "type": "event"
+			   },
+			   {
+				   "anonymous": false,
+				   "inputs": [
+					   {
+						   "indexed": false,
+						   "name": "nextStep",
+						   "type": "string"
+					   }
+				   ],
+				   "name": "LogConstructorInitiated",
+				   "type": "event"
+			   },
+			   {
+				   "payable": false,
+				   "stateMutability": "nonpayable",
+				   "type": "fallback"
+			   },
+			   {
+				   "inputs": [
+					   {
+						   "name": "fOwner",
+						   "type": "address"
+					   },
+					   {
+						   "name": "_fraudID",
+						   "type": "uint256"
+					   }
+				   ],
+				   "payable": false,
+				   "stateMutability": "nonpayable",
+				   "type": "constructor"
+			   },
+			   {
+				   "constant": true,
+				   "inputs": [
+					   {
+						   "name": "x",
+						   "type": "bytes32"
+					   }
+				   ],
+				   "name": "bytes32ToString",
+				   "outputs": [
+					   {
+						   "name": "",
+						   "type": "string"
+					   }
+				   ],
+				   "payable": false,
+				   "stateMutability": "view",
+				   "type": "function"
+			   },
+			   {
+				   "constant": true,
+				   "inputs": [],
+				   "name": "fraduProb",
+				   "outputs": [
+					   {
+						   "name": "",
+						   "type": "string"
+					   }
+				   ],
+				   "payable": false,
+				   "stateMutability": "view",
+				   "type": "function"
+			   },
+			   {
+				   "constant": true,
+				   "inputs": [],
+				   "name": "fraudProbability",
+				   "outputs": [
+					   {
+						   "name": "",
+						   "type": "string"
+					   }
+				   ],
+				   "payable": false,
+				   "stateMutability": "view",
+				   "type": "function"
+			   },
+			   {
+				   "constant": true,
+				   "inputs": [],
+				   "name": "getParamURL",
+				   "outputs": [
+					   {
+						   "name": "",
+						   "type": "string"
+					   }
+				   ],
+				   "payable": false,
+				   "stateMutability": "view",
+				   "type": "function"
+			   },
+			   {
+				   "constant": true,
+				   "inputs": [],
+				   "name": "isFraud",
+				   "outputs": [
+					   {
+						   "name": "",
+						   "type": "bool"
+					   }
+				   ],
+				   "payable": false,
+				   "stateMutability": "view",
+				   "type": "function"
+			   },
+			   {
+				   "constant": true,
+				   "inputs": [],
+				   "name": "paramURL",
+				   "outputs": [
+					   {
+						   "name": "",
+						   "type": "string"
+					   }
+				   ],
+				   "payable": false,
+				   "stateMutability": "view",
+				   "type": "function"
+			   },
+			   {
+				   "constant": true,
+				   "inputs": [
+					   {
+						   "name": "v",
+						   "type": "uint256"
+					   }
+				   ],
+				   "name": "uintToBytes",
+				   "outputs": [
+					   {
+						   "name": "ret",
+						   "type": "bytes32"
+					   }
+				   ],
+				   "payable": false,
+				   "stateMutability": "view",
+				   "type": "function"
+			   }
+		   ];
+		   
+		   console.log(thisContract);
+		   console.log(abiArray);
+		   
+		   web3.eth.defaultAccount=web3.eth.accounts[0];
+		   var testContract = web3.eth.contract(abiArray);
+		   var test = testContract.at(thisContract);
+		   
+		   
+		   
+		   
+		   $("#sendData").click(function() {
+			 test.getData(["CNT_CHILDREN=", "AMT_INCOME_TOTAL=", "AMT_CREDIT=", "AMT_ANNUITY=", "DAYS_EMPLOYED=", "DAYS_BIRTH=", "OWN_CAR_AGE="], [$("#CNT_CHILDREN").val(), $("#AMT_INCOME_TOTAL").val(), $("#AMT_CREDIT").val(), $("#AMT_ANNUITY").val(), $("#DAYS_EMPLOYED").val(), $("#DAYS_BIRTH").val().replace(/-/gi, ""), $("#OWN_CAR_AGE").val()], ["NAME_CONTRACT_TYPE=", "CODE_GENDER=", "FLAG_OWN_CAR=", "FLAG_OWN_REALTY=", "NAME_TYPE_SUITE=", "NAME_INCOME_TYPE=", "NAME_EDUCATION_TYPE=", "NAME_FAMILY_STATUS=", "NAME_HOUSING_TYPE=", "OCCUPATION_TYPE="], [$("#NAME_CONTRACT_TYPE").val(), $("#CODE_GENDER").val(), $("#FLAG_OWN_CAR").val(), $("#FLAG_OWN_REALTY").val(), $("#NAME_TYPE_SUITE").val(), $("#NAME_INCOME_TYPE").val(), $("#NAME_EDUCATION_TYPE").val(), $("#NAME_FAMILY_STATUS").val(), $("#NAME_HOUSING_TYPE").val(), $("#OCCUPATION_TYPE").val()], [], [], (error,result) => (console.log(result)));
+		   
+		   document.getElementById("computeFraud").click();
+		   document.getElementById("showProb").click()
+		   
+		   });
+		   
+		   $("#computeFraud").click(function() {
+			   test.computeFraud.sendTransaction({value: 1000000000000000000}, (error, result) => (console.log(result)));
+		   });
+		   
+		   $("#showProb").click(function() {
+			   test.fraduProb(function(err, res) {
+				   console.log(res);
+			   });
+		   
+		   var data = null;
+		   
+		   var xhr = new XMLHttpRequest();
+		   xhr.withCredentials = true;
+		   
+		   xhr.addEventListener("readystatechange", function () {
+			 if (this.readyState === 4) {
+			   console.log(this.responseText);
+			   document.getElementById("result").innerHTML = this.responseText;
+			 }
+		   });
+		   
+		   xhr.open("GET", "http://localhost:5000/predict?CNT_CHILDREN="+$("#CNT_CHILDREN").val()+"&AMT_INCOME_TOTAL="+$("#AMT_INCOME_TOTAL").val()+"&AMT_CREDIT="+$("#AMT_CREDIT").val()+"&AMT_ANNUITY="+$("#AMT_ANNUITY").val()+"&DAYS_EMPLOYED="+$("#DAYS_EMPLOYED").val()+"&DAYS_BIRTH="+$("#DAYS_BIRTH").val().replace(/-/gi, "")+"&OWN_CAR_AGE="+$("#OWN_CAR_AGE").val()+"&NAME_CONTRACT_TYPE="+$("#NAME_CONTRACT_TYPE").val()+"&CODE_GENDER="+$("#CODE_GENDER").val()+"&FLAG_OWN_CAR="+$("#FLAG_OWN_CAR").val()+"&FLAG_OWN_REALTY="+$("#FLAG_OWN_REALTY").val()+"&NAME_TYPE_SUITE="+$("#NAME_TYPE_SUITE").val()+"&NAME_INCOME_TYPE="+$("#NAME_INCOME_TYPE").val()+"&NAME_EDUCATION_TYPE="+$("#NAME_EDUCATION_TYPE").val()+"&NAME_FAMILY_STATUS="+$("#NAME_FAMILY_STATUS").val()+"&NAME_HOUSING_TYPE="+$("#NAME_HOUSING_TYPE").val()+"&OCCUPATION_TYPE="+$("#OCCUPATION_TYPE").val());
+		   xhr.setRequestHeader("cache-control", "no-cache");
+		   xhr.setRequestHeader("postman-token", "b844f975-50ed-b943-85c7-7f0ea86bc623");
+		   
+		   xhr.send(data);
+		   
+		   
+		   })
+		   
+		   /*
+		   
+		   $("#compute").click(function() {
+			   test.getData(["id", "age"], [1, 20], [], [], [], [], function(err, result) {
+				   console.log(result);
+				   console.log(err);
+			   });
+		   });
+		   
+		   */
+		   
+		   </script>
+
+	</body>
+</html>

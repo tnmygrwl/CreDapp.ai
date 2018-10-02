@@ -9,11 +9,19 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/about', methods=['GET', 'POST'])
+def about():
+	return render_template('generic.html')
+
+@app.route('/apply', methods=['GET', 'POST'])
+def apply():
+	return render_template('elements.html')
+
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
 
 	print(request.args)
-	print(request.url)
+	# print(request.url)
 
 	if len(request.args) == 0:
 		return 'argError:Zero'
@@ -57,11 +65,13 @@ def predict():
 		'OWN_CAR_AGE': int(p16),
 		'OCCUPATION_TYPE': p17
 		}
+
+		print(myJson)
 	
 		myJson_modified = json.dumps(myJson)
 		prob = model.predict(myJson)
 		prob = str(prob)
-		#print(prob)
+		print(prob)
 	
 		return prob
 
