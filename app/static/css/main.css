@@ -3398,7 +3398,7 @@ input, select, textarea {
 			filter: blur(0);
 			opacity: 1;
 			border-bottom: solid 2px rgba(255, 255, 255, 0.125);
-			font-size: 2.25em;
+			font-size: 3.25em;
 			margin-bottom: 0.8em;
 			padding-bottom: 0.4em;
 		}
