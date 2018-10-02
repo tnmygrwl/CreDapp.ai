@@ -151,7 +151,8 @@ def model(features, test_features, encoding='ohe', n_folds=5):
                                                 num_iteration=best_iteration)[:, 1]
 
         # Record the out of fold predictions
-        out_of_fold[valid_indices] = model.predict_proba(valid_features, num_iteration=best_iteration)[:, 1]
+        out_of_fold[valid_indices] = model.predict_proba(
+            valid_features, num_iteration=best_iteration)[:, 1]
 
         # Record the best score
         valid_score = model.best_score_['valid']['auc']
@@ -172,7 +173,8 @@ def model(features, test_features, encoding='ohe', n_folds=5):
     submission = pd.DataFrame({'SK_ID_CURR': test_ids, 'TARGET': test_predictions})
 
     # Make the feature importance dataframe
-    feature_importances = pd.DataFrame({'feature': feature_names, 'importance': feature_importance_values})
+    feature_importances = pd.DataFrame(
+        {'feature': feature_names, 'importance': feature_importance_values})
 
     # Overall validation score
     valid_auc = roc_auc_score(labels, out_of_fold)
@@ -210,12 +212,12 @@ def model_find_prob(json_file):
     output: returns the probability of not defaulting.
 
     """
-    #with open(json_file) as f:
-        #data = json.load(f)
+    # with open(json_file) as f:
+    #data = json.load(f)
     data = json_file
     feat = get_features()
-        # iterate through the df and look for important features.
-    
+    # iterate through the df and look for important features.
+
     for key, value in data.items():
         if key == "AMT_CREDIT":
             amount = value
@@ -269,7 +271,7 @@ def predict(json_file):
     """
 
     probability_score = model_find_prob(json_file)
-    return abs(100 - probability_score)
+    return probability_score
 
 
 """
