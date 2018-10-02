@@ -16,17 +16,17 @@
 	#rcorners1 {
     border-radius: 25px;
     background: #73AD21;
-    padding: 20px;
+    padding: 20px; 
     width: 200px;
-    height: 140px;
+    height: 140px;    
 }
 
 	#rcorners2 {
     border-radius: 25px;
     background: #B22222;
-    padding: 20px;
+    padding: 20px; 
     width: 200px;
-    height: 100px;
+    height: 140px;    
 }
 </style>
 
@@ -115,10 +115,10 @@
 												<div class="col-12">
 													<label for="CODE_GENDER">Gender</label>
 													<div class="col-4 col-12-small">
-														<input type="radio" id="CODE_GENDER" name="GENDER" value="M">
-														<label for="CODE_GENDER">Male</label>
-														<input type="radio" id="CODE_GENDER" name="GENDER" value="F">
-														<label for="CODE_GENDER">Female</label>
+														<input type="checkbox" id="CODE_GENDER" name="CODE_GENDER" value="M">
+														<label for="demo-priority-low">Male</label>
+														<input type="checkbox" id="CODE_GENDER" name="CODE_GENDER" value="F">
+														<label for="demo-priority-normal">Female</label>
 													</div>
 												</div>
 												<div class="col-12">
@@ -179,7 +179,7 @@
 													</select>
 												</div>
 												<div class="col-12">
-													<label for="demo-category">Housig Type</label>
+													<label for="demo-category">Housing Type</label>
 													<select name="demo-income-type" id="NAME_HOUSING_TYPE">
 														<option value="">-</option>
 														<option value="House/Apt">House/Apt</option>
@@ -214,7 +214,7 @@
 												<div class="col-12">
 													<ul class="actions">
 														<li><button type="button" id="sendData">Submit</button></li>
-														<li><button type="button" id="computeFraud" style="display: none;">Compute Fraud</button></li>
+														<li><button type="button" id="computeFraud">Compute Fraud</button></li>
 														<li><button type="button" id="showProb" style="display: none;">Show Probability</button></li>
 														<li><input type="reset" value="Reset" /></li>
 													</ul>
@@ -275,350 +275,352 @@
 			   console.log('This is an unknown network.')
 		   }
 		   })
-
+		   
 		   // var thisContract =  "<%= currentContract %>";
-		   var thisContract =  "0xe6Aad1aE520754A94c966ef48DC8D57750Aee318";
+		   var thisContract =  "0x8D3863d2090de1d35a8061a8cD38cA4BB61C1CbE";
 		   var abiArray = [
-			   {
-				   "constant": false,
-				   "inputs": [
-					   {
-						   "name": "myid",
-						   "type": "bytes32"
-					   },
-					   {
-						   "name": "result",
-						   "type": "string"
-					   }
-				   ],
-				   "name": "__callback",
-				   "outputs": [],
-				   "payable": false,
-				   "stateMutability": "nonpayable",
-				   "type": "function"
-			   },
-			   {
-				   "constant": false,
-				   "inputs": [
-					   {
-						   "name": "myid",
-						   "type": "bytes32"
-					   },
-					   {
-						   "name": "result",
-						   "type": "string"
-					   },
-					   {
-						   "name": "proof",
-						   "type": "bytes"
-					   }
-				   ],
-				   "name": "__callback",
-				   "outputs": [],
-				   "payable": false,
-				   "stateMutability": "nonpayable",
-				   "type": "function"
-			   },
-			   {
-				   "constant": false,
-				   "inputs": [],
-				   "name": "computeFraud",
-				   "outputs": [],
-				   "payable": true,
-				   "stateMutability": "payable",
-				   "type": "function"
-			   },
-			   {
-				   "constant": false,
-				   "inputs": [
-					   {
-						   "name": "attribute",
-						   "type": "string"
-					   },
-					   {
-						   "name": "val",
-						   "type": "bool"
-					   }
-				   ],
-				   "name": "getBoolData",
-				   "outputs": [],
-				   "payable": false,
-				   "stateMutability": "nonpayable",
-				   "type": "function"
-			   },
-			   {
-				   "constant": false,
-				   "inputs": [
-					   {
-						   "name": "intAttr",
-						   "type": "bytes32[]"
-					   },
-					   {
-						   "name": "intVal",
-						   "type": "uint256[]"
-					   },
-					   {
-						   "name": "stringAttr",
-						   "type": "bytes32[]"
-					   },
-					   {
-						   "name": "stringVal",
-						   "type": "bytes32[]"
-					   },
-					   {
-						   "name": "boolAttr",
-						   "type": "bytes32[]"
-					   },
-					   {
-						   "name": "boolVal",
-						   "type": "bool[]"
-					   }
-				   ],
-				   "name": "getData",
-				   "outputs": [
-					   {
-						   "name": "",
-						   "type": "bool"
-					   }
-				   ],
-				   "payable": false,
-				   "stateMutability": "nonpayable",
-				   "type": "function"
-			   },
-			   {
-				   "constant": false,
-				   "inputs": [
-					   {
-						   "name": "attribute",
-						   "type": "string"
-					   },
-					   {
-						   "name": "val",
-						   "type": "uint256"
-					   }
-				   ],
-				   "name": "getIntData",
-				   "outputs": [],
-				   "payable": false,
-				   "stateMutability": "nonpayable",
-				   "type": "function"
-			   },
-			   {
-				   "constant": false,
-				   "inputs": [
-					   {
-						   "name": "attribute",
-						   "type": "string"
-					   },
-					   {
-						   "name": "val",
-						   "type": "string"
-					   }
-				   ],
-				   "name": "getStringData",
-				   "outputs": [],
-				   "payable": false,
-				   "stateMutability": "nonpayable",
-				   "type": "function"
-			   },
-			   {
-				   "anonymous": false,
-				   "inputs": [
-					   {
-						   "indexed": false,
-						   "name": "description",
-						   "type": "string"
-					   }
-				   ],
-				   "name": "LogNewOraclizeQuery",
-				   "type": "event"
-			   },
-			   {
-				   "anonymous": false,
-				   "inputs": [
-					   {
-						   "indexed": false,
-						   "name": "output",
-						   "type": "string"
-					   }
-				   ],
-				   "name": "LogOutputReceived",
-				   "type": "event"
-			   },
-			   {
-				   "anonymous": false,
-				   "inputs": [
-					   {
-						   "indexed": false,
-						   "name": "nextStep",
-						   "type": "string"
-					   }
-				   ],
-				   "name": "LogConstructorInitiated",
-				   "type": "event"
-			   },
-			   {
-				   "payable": false,
-				   "stateMutability": "nonpayable",
-				   "type": "fallback"
-			   },
-			   {
-				   "inputs": [
-					   {
-						   "name": "fOwner",
-						   "type": "address"
-					   },
-					   {
-						   "name": "_fraudID",
-						   "type": "uint256"
-					   }
-				   ],
-				   "payable": false,
-				   "stateMutability": "nonpayable",
-				   "type": "constructor"
-			   },
-			   {
-				   "constant": true,
-				   "inputs": [
-					   {
-						   "name": "x",
-						   "type": "bytes32"
-					   }
-				   ],
-				   "name": "bytes32ToString",
-				   "outputs": [
-					   {
-						   "name": "",
-						   "type": "string"
-					   }
-				   ],
-				   "payable": false,
-				   "stateMutability": "view",
-				   "type": "function"
-			   },
-			   {
-				   "constant": true,
-				   "inputs": [],
-				   "name": "fraduProb",
-				   "outputs": [
-					   {
-						   "name": "",
-						   "type": "string"
-					   }
-				   ],
-				   "payable": false,
-				   "stateMutability": "view",
-				   "type": "function"
-			   },
-			   {
-				   "constant": true,
-				   "inputs": [],
-				   "name": "fraudProbability",
-				   "outputs": [
-					   {
-						   "name": "",
-						   "type": "string"
-					   }
-				   ],
-				   "payable": false,
-				   "stateMutability": "view",
-				   "type": "function"
-			   },
-			   {
-				   "constant": true,
-				   "inputs": [],
-				   "name": "getParamURL",
-				   "outputs": [
-					   {
-						   "name": "",
-						   "type": "string"
-					   }
-				   ],
-				   "payable": false,
-				   "stateMutability": "view",
-				   "type": "function"
-			   },
-			   {
-				   "constant": true,
-				   "inputs": [],
-				   "name": "isFraud",
-				   "outputs": [
-					   {
-						   "name": "",
-						   "type": "bool"
-					   }
-				   ],
-				   "payable": false,
-				   "stateMutability": "view",
-				   "type": "function"
-			   },
-			   {
-				   "constant": true,
-				   "inputs": [],
-				   "name": "paramURL",
-				   "outputs": [
-					   {
-						   "name": "",
-						   "type": "string"
-					   }
-				   ],
-				   "payable": false,
-				   "stateMutability": "view",
-				   "type": "function"
-			   },
-			   {
-				   "constant": true,
-				   "inputs": [
-					   {
-						   "name": "v",
-						   "type": "uint256"
-					   }
-				   ],
-				   "name": "uintToBytes",
-				   "outputs": [
-					   {
-						   "name": "ret",
-						   "type": "bytes32"
-					   }
-				   ],
-				   "payable": false,
-				   "stateMutability": "view",
-				   "type": "function"
-			   }
-		   ];
-
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "myid",
+				"type": "bytes32"
+			},
+			{
+				"name": "result",
+				"type": "string"
+			}
+		],
+		"name": "__callback",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "myid",
+				"type": "bytes32"
+			},
+			{
+				"name": "result",
+				"type": "string"
+			},
+			{
+				"name": "proof",
+				"type": "bytes"
+			}
+		],
+		"name": "__callback",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "computeFraud",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "attribute",
+				"type": "string"
+			},
+			{
+				"name": "val",
+				"type": "bool"
+			}
+		],
+		"name": "getBoolData",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "intAttr",
+				"type": "bytes32[]"
+			},
+			{
+				"name": "intVal",
+				"type": "uint256[]"
+			},
+			{
+				"name": "stringAttr",
+				"type": "bytes32[]"
+			},
+			{
+				"name": "stringVal",
+				"type": "bytes32[]"
+			},
+			{
+				"name": "boolAttr",
+				"type": "bytes32[]"
+			},
+			{
+				"name": "boolVal",
+				"type": "bool[]"
+			}
+		],
+		"name": "getData",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "attribute",
+				"type": "string"
+			},
+			{
+				"name": "val",
+				"type": "uint256"
+			}
+		],
+		"name": "getIntData",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "attribute",
+				"type": "string"
+			},
+			{
+				"name": "val",
+				"type": "string"
+			}
+		],
+		"name": "getStringData",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "description",
+				"type": "string"
+			}
+		],
+		"name": "LogNewOraclizeQuery",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "output",
+				"type": "string"
+			}
+		],
+		"name": "LogOutputReceived",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "nextStep",
+				"type": "string"
+			}
+		],
+		"name": "LogConstructorInitiated",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"name": "fOwner",
+				"type": "address"
+			},
+			{
+				"name": "_fraudID",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "fallback"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "x",
+				"type": "bytes32"
+			}
+		],
+		"name": "bytes32ToString",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "fraduProb",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "fraudProbability",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getParamURL",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "isFraud",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "paramURL",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "v",
+				"type": "uint256"
+			}
+		],
+		"name": "uintToBytes",
+		"outputs": [
+			{
+				"name": "ret",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+];
+		   
 		   console.log(thisContract);
 		   console.log(abiArray);
-
+		   
 		   web3.eth.defaultAccount=web3.eth.accounts[0];
 		   var testContract = web3.eth.contract(abiArray);
 		   var test = testContract.at(thisContract);
-
-
-
-
+		   
+		   
+		   
+		   
 		   $("#sendData").click(function() {
-			 test.getData(["CNT_CHILDREN=", "AMT_INCOME_TOTAL=", "AMT_CREDIT=", "AMT_ANNUITY=", "DAYS_EMPLOYED=", "DAYS_BIRTH=", "OWN_CAR_AGE="], [$("#CNT_CHILDREN").val(), $("#AMT_INCOME_TOTAL").val(), $("#AMT_CREDIT").val(), $("#AMT_ANNUITY").val(), $("#DAYS_EMPLOYED").val(), $("#DAYS_BIRTH").val().replace(/-/gi, ""), $("#OWN_CAR_AGE").val()], ["NAME_CONTRACT_TYPE=", "CODE_GENDER=", "FLAG_OWN_CAR=", "FLAG_OWN_REALTY=", "NAME_TYPE_SUITE=", "NAME_INCOME_TYPE=", "NAME_EDUCATION_TYPE=", "NAME_FAMILY_STATUS=", "NAME_HOUSING_TYPE=", "OCCUPATION_TYPE="], [$("#NAME_CONTRACT_TYPE").val(), $("#CODE_GENDER").val(), $("#FLAG_OWN_CAR").val(), $("#FLAG_OWN_REALTY").val(), $("#NAME_TYPE_SUITE").val(), $("#NAME_INCOME_TYPE").val(), $("#NAME_EDUCATION_TYPE").val(), $("#NAME_FAMILY_STATUS").val(), $("#NAME_HOUSING_TYPE").val(), $("#OCCUPATION_TYPE").val()], [], [], (error,result) => (console.log(result)));
-
-		   document.getElementById("computeFraud").click();
-		   document.getElementById("showProb").click()
-
+			 test.getData([web3.fromAscii("CNT_CHILDREN="), web3.fromAscii("AMT_INCOME_TOTAL="), web3.fromAscii("AMT_CREDIT="), web3.fromAscii("AMT_ANNUITY="), web3.fromAscii("DAYS_EMPLOYED="), web3.fromAscii("DAYS_BIRTH="), web3.fromAscii("OWN_CAR_AGE=")], [6, $("#AMT_INCOME_TOTAL").val(), $("#AMT_CREDIT").val(), $("#AMT_ANNUITY").val(), $("#DAYS_EMPLOYED").val(), $("#DAYS_BIRTH").val().replace(/-/gi, ""), $("#OWN_CAR_AGE").val()], [web3.fromAscii("NAME_CONTRACT_TYPE="), web3.fromAscii("CODE_GENDER="), web3.fromAscii("FLAG_OWN_CAR="), web3.fromAscii("FLAG_OWN_REALTY="), web3.fromAscii("NAME_TYPE_SUITE="), web3.fromAscii("NAME_INCOME_TYPE="), web3.fromAscii("NAME_EDUCATION_TYPE="), web3.fromAscii("NAME_FAMILY_STATUS="), web3.fromAscii("NAME_HOUSING_TYPE="), web3.fromAscii("OCCUPATION_TYPE=")], [web3.fromAscii($("#NAME_CONTRACT_TYPE").val()), web3.fromAscii($("#CODE_GENDER").val()), web3.fromAscii($("#FLAG_OWN_CAR").val()), web3.fromAscii($("#FLAG_OWN_REALTY").val()), web3.fromAscii($("#NAME_TYPE_SUITE").val()), web3.fromAscii($("#NAME_INCOME_TYPE").val()), web3.fromAscii($("#NAME_EDUCATION_TYPE").val()), web3.fromAscii($("#NAME_FAMILY_STATUS").val()), web3.fromAscii($("#NAME_HOUSING_TYPE").val()), web3.fromAscii($("#OCCUPATION_TYPE").val())], [], [], (error,result) => (console.log(result)));
+		   
+		   // document.getElementById("computeFraud").click();
+		   // document.getElementById("showProb").click()
+		   
 		   });
-
+		   
 		   $("#computeFraud").click(function() {
-			   test.computeFraud.sendTransaction({value: 1000000000000000000}, (error, result) => (console.log(result)));
-		   });
+			   test.computeFraud.sendTransaction({value: 900000000000000000}, (error, result) => (console.log(result)));
 
+			   document.getElementById("showProb").click()
+		   });
+		   
 		   $("#showProb").click(function() {
 			   test.fraduProb(function(err, res) {
 				   console.log(res);
 			   });
-
+		   
 		   var data = null;
-
+		   
 		   var xhr = new XMLHttpRequest();
 		   xhr.withCredentials = true;
-
+		   
 		   xhr.addEventListener("readystatechange", function () {
 			 if (this.readyState === 4) {
 			   console.log(this.responseText);
@@ -630,27 +632,27 @@
 			   }
 			 }
 		   });
-
+		   
 		   xhr.open("GET", "http://localhost:5000/predict?CNT_CHILDREN="+$("#CNT_CHILDREN").val()+"&AMT_INCOME_TOTAL="+$("#AMT_INCOME_TOTAL").val()+"&AMT_CREDIT="+$("#AMT_CREDIT").val()+"&AMT_ANNUITY="+$("#AMT_ANNUITY").val()+"&DAYS_EMPLOYED="+$("#DAYS_EMPLOYED").val()+"&DAYS_BIRTH="+$("#DAYS_BIRTH").val().replace(/-/gi, "")+"&OWN_CAR_AGE="+$("#OWN_CAR_AGE").val()+"&NAME_CONTRACT_TYPE="+$("#NAME_CONTRACT_TYPE").val()+"&CODE_GENDER="+$("#CODE_GENDER").val()+"&FLAG_OWN_CAR="+$("#FLAG_OWN_CAR").val()+"&FLAG_OWN_REALTY="+$("#FLAG_OWN_REALTY").val()+"&NAME_TYPE_SUITE="+$("#NAME_TYPE_SUITE").val()+"&NAME_INCOME_TYPE="+$("#NAME_INCOME_TYPE").val()+"&NAME_EDUCATION_TYPE="+$("#NAME_EDUCATION_TYPE").val()+"&NAME_FAMILY_STATUS="+$("#NAME_FAMILY_STATUS").val()+"&NAME_HOUSING_TYPE="+$("#NAME_HOUSING_TYPE").val()+"&OCCUPATION_TYPE="+$("#OCCUPATION_TYPE").val());
 		   xhr.setRequestHeader("cache-control", "no-cache");
 		   xhr.setRequestHeader("postman-token", "b844f975-50ed-b943-85c7-7f0ea86bc623");
-
+		   
 		   xhr.send(data);
-
-
+		   
+		   
 		   })
-
+		   
 		   /*
-
+		   
 		   $("#compute").click(function() {
 			   test.getData(["id", "age"], [1, 20], [], [], [], [], function(err, result) {
 				   console.log(result);
 				   console.log(err);
 			   });
 		   });
-
+		   
 		   */
-
+		   
 		   </script>
 
 	</body>
