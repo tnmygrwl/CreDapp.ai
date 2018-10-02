@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, redirect, url_for, send_from_directory
-import model
+import model, time
 import json
 
 app = Flask(__name__)
@@ -71,6 +71,7 @@ def predict():
 		myJson_modified = json.dumps(myJson)
 		prob = model.predict(myJson)
 		prob = str(prob)
+		time.sleep(20)
 		print(prob)
 	
 		return prob
