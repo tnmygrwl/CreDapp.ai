@@ -1,5 +1,7 @@
 # CreÐApp.ai
+<b>Team Esketit's submission for Innerver2K18 Hackathon at AIT, Pune.<br></b>
 This is a solution to integrate a decentralized banking system with an AI-driven and decentralized credit rating agency that helps to overcome all the shortcomings of a traditional [CRA](https://en.wikipedia.org/wiki/Credit_rating_agency).
+ 
 
 ## Architecture Diagram
 ![Architecture](https://i.imgur.com/NmgITsR.png)
