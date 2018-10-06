@@ -7,4 +7,4 @@ This is a solution to integrate a decentralized banking system with an AI-driven
 ## Demo Presentation:
 [Here](https://docs.google.com/presentation/d/19aGVzCvJGO4nX97MuTqLI0c0uDSetRqwNrDGkSwCc1g/edit?usp=sharing) is a small presentation for understanding how it works.
 ## Demo Video
-[Demo Video](https://drive.google.com/open?id=18S4hO-QA0cmK7ay7VlVAUv_0v8V4HHdm)
+[Demo Video](https://drive.google.com/open?id=18S4hO-QA0cmK7ay7VlVAUv_0v8V4HHdm) (Tip: Watch on 2x)
