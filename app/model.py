@@ -206,7 +206,6 @@ def get_features():
     """
     returns the most important features.
     """
-
     imp_features = [1, 1]
     for i in range(100):
         imp_features[0] = i * 500
@@ -222,7 +221,8 @@ def model_find_prob(json_file):
 
     """
     # with open(json_file) as f:
-    #data = json.load(f)
+    # data = json.load(f)
+
     data = json_file
     feat = get_features()
     # iterate through the df and look for important features.
@@ -296,5 +296,6 @@ submission = model(app_train, app_test)
 # print(metrics)
 # defaulters()
 
-# path = 'features.json'
+# path = {"AMT_CREDIT": 90000, "AMT_INCOME_TOTAL": 150000}
+# predict(path)
 # print(predict(path))
