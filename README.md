@@ -11,7 +11,14 @@ CreÐApp.ai is an AI-driven credit rating agency that attempts to crowdsource th
 Understand the [presentation](https://docs.google.com/presentation/d/19aGVzCvJGO4nX97MuTqLI0c0uDSetRqwNrDGkSwCc1g/edit?usp=sharing) or the [Explainer PDF](https://github.com/tanmay7270/CreDapp.ai/blob/master/Pitch.pdf) to understand the process and requirements.
 
 ## Demo Video
-[Demo Video](https://drive.google.com/open?id=18S4hO-QA0cmK7ay7VlVAUv_0v8V4HHdm) (Tip: Watch on 2x)
+[Demo Video](https://drive.google.com/open?id=18S4hO-QA0cmK7ay7VlVAUv_0v8V4HHdm) (Deprecated)
+
+## Get started
+
+```bash
+make install
+make credapp
+```
 
 ## Team Esketit
  - [Tanmay Agrawal](https://github.com/tanmay7270)
