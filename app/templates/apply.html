@@ -215,7 +215,7 @@
 													<ul class="actions">
 														<li><button type="button" id="sendData">Submit</button></li>
 														<li><button type="button" id="computeFraud">Compute Fraud</button></li>
-														<li><button type="button" id="showProb" style="display: none;">Show Probability</button></li>
+														<li><button type="button" id="showProb">Show Probability</button></li>
 														<li><input type="reset" value="Reset" /></li>
 													</ul>
 													<div id="result"></div>
@@ -275,9 +275,12 @@
 			   console.log('This is an unknown network.')
 		   }
 		   })
+
+       const urlParams = new URLSearchParams(window.location.search);
+const myParam = urlParams.get('contract');
 		   
 		   // var thisContract =  "<%= currentContract %>";
-		   var thisContract =  "0x8D3863d2090de1d35a8061a8cD38cA4BB61C1CbE";
+		   var thisContract =  myParam;
 		   var abiArray = [
 	{
 		"constant": false,
@@ -598,7 +601,7 @@
 		   
 		   
 		   $("#sendData").click(function() {
-			 test.getData([web3.fromAscii("CNT_CHILDREN="), web3.fromAscii("AMT_INCOME_TOTAL="), web3.fromAscii("AMT_CREDIT="), web3.fromAscii("AMT_ANNUITY="), web3.fromAscii("DAYS_EMPLOYED="), web3.fromAscii("DAYS_BIRTH="), web3.fromAscii("OWN_CAR_AGE=")], [6, $("#AMT_INCOME_TOTAL").val(), $("#AMT_CREDIT").val(), $("#AMT_ANNUITY").val(), $("#DAYS_EMPLOYED").val(), $("#DAYS_BIRTH").val().replace(/-/gi, ""), $("#OWN_CAR_AGE").val()], [web3.fromAscii("NAME_CONTRACT_TYPE="), web3.fromAscii("CODE_GENDER="), web3.fromAscii("FLAG_OWN_CAR="), web3.fromAscii("FLAG_OWN_REALTY="), web3.fromAscii("NAME_TYPE_SUITE="), web3.fromAscii("NAME_INCOME_TYPE="), web3.fromAscii("NAME_EDUCATION_TYPE="), web3.fromAscii("NAME_FAMILY_STATUS="), web3.fromAscii("NAME_HOUSING_TYPE="), web3.fromAscii("OCCUPATION_TYPE=")], [web3.fromAscii($("#NAME_CONTRACT_TYPE").val()), web3.fromAscii($("#CODE_GENDER").val()), web3.fromAscii($("#FLAG_OWN_CAR").val()), web3.fromAscii($("#FLAG_OWN_REALTY").val()), web3.fromAscii($("#NAME_TYPE_SUITE").val()), web3.fromAscii($("#NAME_INCOME_TYPE").val()), web3.fromAscii($("#NAME_EDUCATION_TYPE").val()), web3.fromAscii($("#NAME_FAMILY_STATUS").val()), web3.fromAscii($("#NAME_HOUSING_TYPE").val()), web3.fromAscii($("#OCCUPATION_TYPE").val())], [], [], (error,result) => (console.log(result)));
+				test.getData([web3.fromAscii("CNT_CHILDREN="), web3.fromAscii("AMT_INCOME_TOTAL="), web3.fromAscii("AMT_CREDIT="), web3.fromAscii("AMT_ANNUITY="), web3.fromAscii("DAYS_EMPLOYED="), web3.fromAscii("DAYS_BIRTH="), web3.fromAscii("OWN_CAR_AGE=")], [6, $("#AMT_INCOME_TOTAL").val(), $("#AMT_CREDIT").val(), $("#AMT_ANNUITY").val(), $("#DAYS_EMPLOYED").val(), $("#DAYS_BIRTH").val().replace(/-/gi, ""), $("#OWN_CAR_AGE").val()], [web3.fromAscii("NAME_CONTRACT_TYPE="), web3.fromAscii("CODE_GENDER="), web3.fromAscii("FLAG_OWN_CAR="), web3.fromAscii("FLAG_OWN_REALTY="), web3.fromAscii("NAME_TYPE_SUITE="), web3.fromAscii("NAME_INCOME_TYPE="), web3.fromAscii("NAME_EDUCATION_TYPE="), web3.fromAscii("NAME_FAMILY_STATUS="), web3.fromAscii("NAME_HOUSING_TYPE="), web3.fromAscii("OCCUPATION_TYPE=")], [web3.fromAscii($("#NAME_CONTRACT_TYPE").val()), web3.fromAscii($("#CODE_GENDER").val()), web3.fromAscii($("#FLAG_OWN_CAR").val()), web3.fromAscii($("#FLAG_OWN_REALTY").val()), web3.fromAscii($("#NAME_TYPE_SUITE").val()), web3.fromAscii($("#NAME_INCOME_TYPE").val()), web3.fromAscii($("#NAME_EDUCATION_TYPE").val()), web3.fromAscii($("#NAME_FAMILY_STATUS").val()), web3.fromAscii($("#NAME_HOUSING_TYPE").val()), web3.fromAscii($("#OCCUPATION_TYPE").val())], [], [], (error,result) => (console.log(result)));
 		   
 		   // document.getElementById("computeFraud").click();
 		   // document.getElementById("showProb").click()
@@ -606,41 +609,24 @@
 		   });
 		   
 		   $("#computeFraud").click(function() {
-			   test.computeFraud.sendTransaction({value: 900000000000000000}, (error, result) => (console.log(result)));
-
-			   document.getElementById("showProb").click()
+			   test.computeFraud.sendTransaction({value: 9000}, (error, result) => {
+					 console.log(result);
+					 });
+			   //document.getElementById("showProb").click()
 		   });
 		   
 		   $("#showProb").click(function() {
 			   test.fraduProb(function(err, res) {
 				   console.log(res);
+					 if(res > 60) {
+			   			document.getElementById("result").innerHTML = '<center><p id="rcorners1"><b>Score : ' + res + '<br>ACCEPTABLE RISK</b></p></center><br>';
+			   		}
+			   		else {
+			   			document.getElementById("result").innerHTML = '<center><p id="rcorners2"><b>Score : ' + res + '<br>NOT ACCEPTABLE RISK</b></p></center><br>';
+			   }
 			   });
-		   
-		   var data = null;
-		   
-		   var xhr = new XMLHttpRequest();
-		   xhr.withCredentials = true;
-		   
-		   xhr.addEventListener("readystatechange", function () {
-			 if (this.readyState === 4) {
-			   console.log(this.responseText);
-			   if(this.responseText > 60) {
-			   	document.getElementById("result").innerHTML = '<center><p id="rcorners1"><b>Score : ' + this.responseText + '<br>ACCEPTABLE RISK</b></p></center><br>';
-			   }
-			   else {
-			   	document.getElementById("result").innerHTML = '<center><p id="rcorners2"><b>Score : ' + this.responseText + '<br>NOT ACCEPTABLE RISK</b></p></center><br>';
-			   }
-			 }
-		   });
-		   
-		   xhr.open("GET", "http://localhost:5000/predict?CNT_CHILDREN="+$("#CNT_CHILDREN").val()+"&AMT_INCOME_TOTAL="+$("#AMT_INCOME_TOTAL").val()+"&AMT_CREDIT="+$("#AMT_CREDIT").val()+"&AMT_ANNUITY="+$("#AMT_ANNUITY").val()+"&DAYS_EMPLOYED="+$("#DAYS_EMPLOYED").val()+"&DAYS_BIRTH="+$("#DAYS_BIRTH").val().replace(/-/gi, "")+"&OWN_CAR_AGE="+$("#OWN_CAR_AGE").val()+"&NAME_CONTRACT_TYPE="+$("#NAME_CONTRACT_TYPE").val()+"&CODE_GENDER="+$("#CODE_GENDER").val()+"&FLAG_OWN_CAR="+$("#FLAG_OWN_CAR").val()+"&FLAG_OWN_REALTY="+$("#FLAG_OWN_REALTY").val()+"&NAME_TYPE_SUITE="+$("#NAME_TYPE_SUITE").val()+"&NAME_INCOME_TYPE="+$("#NAME_INCOME_TYPE").val()+"&NAME_EDUCATION_TYPE="+$("#NAME_EDUCATION_TYPE").val()+"&NAME_FAMILY_STATUS="+$("#NAME_FAMILY_STATUS").val()+"&NAME_HOUSING_TYPE="+$("#NAME_HOUSING_TYPE").val()+"&OCCUPATION_TYPE="+$("#OCCUPATION_TYPE").val());
-		   xhr.setRequestHeader("cache-control", "no-cache");
-		   xhr.setRequestHeader("postman-token", "b844f975-50ed-b943-85c7-7f0ea86bc623");
-		   
-		   xhr.send(data);
-		   
-		   
-		   })
+       });
+
 		   
 		   /*
 		   
