@@ -25,26 +25,19 @@ def model(features, test_features, encoding='ohe', n_folds=5):
     # df.drop('A', axis=1)
     test_features = test_features.drop('SK_ID_CURR', axis=1)
 
-    
     if encoding == 'ohe':
         features = pd.get_dummies(features)
         test_features = pd.get_dummies(test_features)
 
-        
         features, test_features = features.align(test_features, join='inner', axis=1)
 
-        
         cat_indices = 'auto'
 
-    
     elif encoding == 'le':
-
 
         label_encoder = LabelEncoder()
 
-
         cat_indices = []
-
 
         for i, col in enumerate(features):
             if features[col].dtype == 'object':
@@ -67,15 +60,11 @@ def model(features, test_features, encoding='ohe', n_folds=5):
 
     k_fold = KFold(n_splits=n_folds, shuffle=True, random_state=50)
 
-
     feature_importance_values = np.zeros(len(feature_names))
-
 
     test_predictions = np.zeros(test_features.shape[0])
 
-
     out_of_fold = np.zeros(features.shape[0])
-
 
     valid_scores = []
     train_scores = []
@@ -104,14 +93,11 @@ def model(features, test_features, encoding='ohe', n_folds=5):
         # model = joblib.load('lgb.pkl')
         best_iteration = model.best_iteration_
 
-
         test_predictions += model.predict_proba(test_features,
                                                 num_iteration=best_iteration)[:, 1]
 
-
         out_of_fold[valid_indices] = model.predict_proba(
             valid_features, num_iteration=best_iteration)[:, 1]
-
 
         valid_score = model.best_score_['valid']['auc']
         train_score = model.best_score_['train']['auc']
@@ -119,32 +105,24 @@ def model(features, test_features, encoding='ohe', n_folds=5):
         valid_scores.append(valid_score)
         train_scores.append(train_score)
 
-
         joblib.dump(model, 'lgb.pkl')
-
 
         gc.enable()
         del model, train_features, valid_features
         gc.collect()
 
-
     submission = pd.DataFrame({'SK_ID_CURR': test_ids, 'TARGET': test_predictions})
-
 
     feature_importances = pd.DataFrame(
         {'feature': feature_names, 'importance': feature_importance_values})
 
-
     valid_auc = roc_auc_score(labels, out_of_fold)
-
 
     valid_scores.append(valid_auc)
     train_scores.append(np.mean(train_scores))
 
-
     fold_names = list(range(n_folds))
     fold_names.append('overall')
-
 
     metrics = pd.DataFrame({'fold': fold_names, 'train': train_scores, 'valid': valid_scores})
 
@@ -165,15 +143,12 @@ def model_find_prob(json_file):
 
     data = json_file
     feat = get_features()
-    
 
     for key, value in data.items():
         if key == "AMT_CREDIT":
             amount = value
         if key == "AMT_INCOME_TOTAL":
             income = value
-
-   
 
     if amount > feat[0] and income > feat[1]:
         rn.seed((amount * income) / 255)
@@ -204,5 +179,3 @@ def read_data():
 def predict(json_file):
     probability_score = model_find_prob(json_file)
     return probability_score
-
-
