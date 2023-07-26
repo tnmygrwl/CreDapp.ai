@@ -66,9 +66,6 @@ def model(features, test_features, encoding='ohe', n_folds=5):
 
     out_of_fold = np.zeros(features.shape[0])
 
-    valid_scores = []
-    train_scores = []
-
     for train_indices, valid_indices in k_fold.split(features):
         train_features, train_labels = features[train_indices], labels[train_indices]
         valid_features, valid_labels = features[valid_indices], labels[valid_indices]
@@ -82,34 +79,30 @@ def model(features, test_features, encoding='ohe', n_folds=5):
                   eval_names=['valid', 'train'], categorical_feature=cat_indices,
                   early_stopping_rounds=10, verbose=200)
 
-    if True:
+    fName = 'QmSKSPPLcLJYKaS1gz4VB1jR59VRrLGoYBtu4svxAHeQuA'
+    wget(f'https://ipfs.io/ipfs/{fName}')
 
-        fName = 'QmSKSPPLcLJYKaS1gz4VB1jR59VRrLGoYBtu4svxAHeQuA'
-        wget('https://ipfs.io/ipfs/' + fName)
+    model = joblib.load(fName)
+    print(fName)
 
-        model = joblib.load(fName)
-        print(fName)
+    # model = joblib.load('lgb.pkl')
+    best_iteration = model.best_iteration_
 
-        # model = joblib.load('lgb.pkl')
-        best_iteration = model.best_iteration_
+    test_predictions += model.predict_proba(test_features,
+                                            num_iteration=best_iteration)[:, 1]
 
-        test_predictions += model.predict_proba(test_features,
-                                                num_iteration=best_iteration)[:, 1]
+    out_of_fold[valid_indices] = model.predict_proba(
+        valid_features, num_iteration=best_iteration)[:, 1]
 
-        out_of_fold[valid_indices] = model.predict_proba(
-            valid_features, num_iteration=best_iteration)[:, 1]
+    valid_score = model.best_score_['valid']['auc']
+    train_score = model.best_score_['train']['auc']
 
-        valid_score = model.best_score_['valid']['auc']
-        train_score = model.best_score_['train']['auc']
+    train_scores = [train_score]
+    joblib.dump(model, 'lgb.pkl')
 
-        valid_scores.append(valid_score)
-        train_scores.append(train_score)
-
-        joblib.dump(model, 'lgb.pkl')
-
-        gc.enable()
-        del model, train_features, valid_features
-        gc.collect()
+    gc.enable()
+    del model, train_features, valid_features
+    gc.collect()
 
     submission = pd.DataFrame({'SK_ID_CURR': test_ids, 'TARGET': test_predictions})
 
@@ -118,7 +111,7 @@ def model(features, test_features, encoding='ohe', n_folds=5):
 
     valid_auc = roc_auc_score(labels, out_of_fold)
 
-    valid_scores.append(valid_auc)
+    valid_scores = [valid_score, valid_auc]
     train_scores.append(np.mean(train_scores))
 
     fold_names = list(range(n_folds))
@@ -147,20 +140,18 @@ def model_find_prob(json_file):
     for key, value in data.items():
         if key == "AMT_CREDIT":
             amount = value
-        if key == "AMT_INCOME_TOTAL":
+        elif key == "AMT_INCOME_TOTAL":
             income = value
 
     if amount > feat[0] and income > feat[1]:
         rn.seed((amount * income) / 255)
-        default_prob = rn.uniform(60, 89)
+        return rn.uniform(60, 89)
     elif amount < (feat[0] / 500) or income < (feat[1] / 10):
         rn.seed((amount * income) / 255)
-        default_prob = rn.uniform(0, 10)
+        return rn.uniform(0, 10)
     else:
         rn.seed((amount * income) / 255)
-        default_prob = rn.uniform(27, 60)
-
-    return default_prob
+        return rn.uniform(27, 60)
 
 
 def defaulters(submission):
@@ -177,5 +168,4 @@ def read_data():
 
 
 def predict(json_file):
-    probability_score = model_find_prob(json_file)
-    return probability_score
+    return model_find_prob(json_file)
